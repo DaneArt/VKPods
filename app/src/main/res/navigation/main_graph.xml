@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.daneart.vkpods.StartFragment"
+        android:label="start_fragment"
+        tools:layout="@layout/start_fragment" >
+        <action
+            android:id="@+id/action_startFragment_to_newPodFragment"
+            app:destination="@id/newPodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.daneart.vkpods.EditFragment"
+        android:label="edit_fragment"
+        tools:layout="@layout/edit_fragment" >
+        <action
+            android:id="@+id/action_editFragment_to_musicFragment"
+            app:destination="@id/musicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finishFragment"
+        android:name="com.daneart.vkpods.FinishFragment"
+        android:label="finish_fragment"
+        tools:layout="@layout/finish_fragment" />
+    <fragment
+        android:id="@+id/musicFragment"
+        android:name="com.daneart.vkpods.MusicFragment"
+        android:label="music_fragment"
+        tools:layout="@layout/music_fragment" />
+    <fragment
+        android:id="@+id/newPodFragment"
+        android:name="com.daneart.vkpods.NewPodFragment"
+        android:label="new_pod_fragment"
+        tools:layout="@layout/new_pod_fragment" >
+        <action
+            android:id="@+id/action_newPodFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+        <action
+            android:id="@+id/action_newPodFragment_to_publishFragment"
+            app:destination="@id/publishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/publishFragment"
+        android:name="com.daneart.vkpods.PublishFragment"
+        android:label="publish_fragment"
+        tools:layout="@layout/publish_fragment" >
+        <action
+            android:id="@+id/action_publishFragment_to_finishFragment"
+            app:destination="@id/finishFragment" />
+    </fragment>
+</navigation>

@@ -7,6 +7,143 @@
     android:layout_height="match_parent"
     tools:context=".EditFragment">
 
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/bg_editor"
+        android:orientation="vertical"
+        android:padding="1dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <com.daneart.vkpods.customView.TopTimeLineView
+            android:id="@+id/topTimeLineView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_round_top"
+            android:paddingTop="8dp"
+            app:bigPointHeight="18dp"
+            android:focusable="true"
+            android:clickable="true"
+            app:infoTextSize="18dp"
+            app:mediumPointHeight="8dp"
+            app:pointsGap="10dp"
+            app:seconds="60"
+            app:smallPointHeight="4dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D7D8D9" />
+
+        <com.daneart.vkpods.customView.MainTimeLineView
+            android:id="@+id/mainTimeLine"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:background="#F2F3F5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/play" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/pic3" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/pic4"
+                    tools:layout_editor_absoluteX="140dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/pic2"
+                    tools:layout_editor_absoluteX="241dp" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/pic5" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/pic" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <com.daneart.vkpods.customView.TimeLineSlider
+        android:id="@+id/timeLineSlider"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+
+        />
+
+    <com.daneart.vkpods.customView.TimeCutterView
+        android:id="@+id/timeCutter"
+        android:layout_width="match_parent"
+        android:layout_height="144dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:startX="8dp"
+        app:endX="150dp"
+        />
+
     <Space
         android:id="@+id/space"
         android:layout_width="match_parent"
@@ -17,83 +154,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnPlay"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="11dp"
-        android:background="#ffffff"
-        android:src="@drawable/play"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/space" />
-
-
-    <ImageButton
-        android:id="@+id/btnScissors"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="11dp"
-        android:background="#ffffff"
-        android:src="@drawable/pic3"
-        app:layout_constraintStart_toEndOf="@+id/btnPlay"
-        app:layout_constraintTop_toBottomOf="@+id/space" />
-
-
-    <ImageButton
-        android:id="@+id/btnReturn"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="11dp"
-        android:background="#ffffff"
-        android:src="@drawable/pic4"
-        app:layout_constraintStart_toEndOf="@+id/btnScissors"
-        app:layout_constraintTop_toBottomOf="@+id/space" />
-
-    <ImageButton
-        android:id="@+id/btnMusic"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="11dp"
-        android:background="#ffffff"
-        android:src="@drawable/pic2"
-        app:layout_constraintEnd_toStartOf="@+id/btn1"
-        app:layout_constraintTop_toBottomOf="@+id/space" />
-
-    <ImageButton
-        android:id="@+id/btn1"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="11dp"
-        android:background="#ffffff"
-        android:src="@drawable/pic5"
-        app:layout_constraintStart_toEndOf="@+id/btnMusic"
-        app:layout_constraintTop_toBottomOf="@+id/space" />
-
-    <ImageButton
-        android:id="@+id/btn2"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="11dp"
-        android:background="#ffffff"
-        android:src="@drawable/pic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn1"
-        app:layout_constraintTop_toBottomOf="@+id/space" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -103,7 +163,7 @@
         android:text="ТАЙМКОДЫ"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPlay" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -157,6 +217,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

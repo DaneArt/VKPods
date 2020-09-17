@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TopTimeLineView">
+        <attr name="seconds" format="integer"/>
+        <attr name="pointsGap" format="dimension"/>
+        <attr name="infoTextSize" format="dimension"/>
+        <attr name="mainColor" format="color"/>
+        <attr name="smallPointHeight" format="dimension"/>
+        <attr name="mediumPointHeight" format="dimension"/>
+        <attr name="bigPointHeight" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="TimeCutterView">
+        <attr name="startX" format="dimension"/>
+        <attr name="endX" format="dimension"/>
+
+    </declare-styleable>
+</resources>
