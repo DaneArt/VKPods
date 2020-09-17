@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
+import kotlinx.android.synthetic.main.publish_fragment.*
 
 class PublishFragment : Fragment() {
 
@@ -26,6 +28,9 @@ class PublishFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(PublishViewModel::class.java)
         // TODO: Use the ViewModel
+        btn_publish.setOnClickListener {
+            it.findNavController().navigate(R.id.action_publishFragment_to_finishFragment)
+        }
     }
 
 }

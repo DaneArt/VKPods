@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_editFragment_to_musicFragment"
             app:destination="@id/musicFragment" />
+        <action
+            android:id="@+id/action_editFragment_to_publishFragment"
+            app:destination="@id/publishFragment" />
     </fragment>
     <fragment
         android:id="@+id/finishFragment"
@@ -41,9 +44,6 @@
         <action
             android:id="@+id/action_newPodFragment_to_editFragment"
             app:destination="@id/editFragment" />
-        <action
-            android:id="@+id/action_newPodFragment_to_publishFragment"
-            app:destination="@id/publishFragment" />
     </fragment>
     <fragment
         android:id="@+id/publishFragment"

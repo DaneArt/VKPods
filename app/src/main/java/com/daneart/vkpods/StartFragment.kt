@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
+import kotlinx.android.synthetic.main.start_fragment.*
 
 class StartFragment : Fragment() {
 
@@ -28,6 +30,10 @@ class StartFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(StartViewModel::class.java)
         // TODO: Use the ViewModel
+
+        btnStart.setOnClickListener {
+            it.findNavController().navigate(R.id.action_startFragment_to_newPodFragment)
+        }
     }
 
 }

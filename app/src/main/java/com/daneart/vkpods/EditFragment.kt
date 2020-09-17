@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import com.daneart.vkpods.customView.TimeCutterView
 import com.daneart.vkpods.customView.TimeLineSlider
 import kotlinx.android.synthetic.main.edit_fragment.*
@@ -17,7 +18,8 @@ class EditFragment : Fragment() {
 
     private var startX = 0f
     private var endX = 0f
-    private val speedScroll =0.5f
+    private val speedScroll = 0.5f
+
     companion object {
         fun newInstance() = EditFragment()
     }
@@ -28,6 +30,7 @@ class EditFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         return inflater.inflate(R.layout.edit_fragment, container, false)
     }
 
@@ -35,6 +38,14 @@ class EditFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(EditViewModel::class.java)
 
+        btn_editNext.setOnClickListener {
+            it.findNavController().navigate(R.id.action_editFragment_to_publishFragment)
+        }
+
+        imageView5.setOnClickListener {
+            it.findNavController().navigate(R.id.action_editFragment_to_musicFragment)
+
+        }
         var count = 60
         mainTimeLine.volumeList = generateSequence {
             if (count-- > 0) {
